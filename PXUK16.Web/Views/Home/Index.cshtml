@@ -1,0 +1,31 @@
+﻿@model List<Category>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<a asp-controller="Home" asp-action="create" class="btn btn-primary mb-2">Create</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#Id</th>
+            <th>Category Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>
+                   @item.CategoryId
+                </td>
+                <td>
+                    @item.CategoryName
+                </td>
+                <td>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
