@@ -1,0 +1,32 @@
+﻿@model List<Manufactory>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<a asp-controller="Manufactory" asp-action="create" class="btn btn-primary mb-2">Create</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#Id</th>
+            <th>Manufactory Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        @item.ManufactoryId
+    </td>
+    <td>
+        @item.Name
+    </td>
+    <td>
+        <a asp-controller="Manufactory" asp-action="Update" class="btn btn-outline-primary mb-2">Update</a>
+        <a asp-controller="Home" asp-action="#" class="btn btn-outline-danger mb-2">Delete</a>
+    </td>
+</tr>}
+    </tbody>
+</table>
+
